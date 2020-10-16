@@ -1,0 +1,5 @@
+streams:
+  # name of the stream
+  mypath:
+    # url of the source stream, in the format rtsp://user:pass@host:port/path
+    url: rtsp://temp:temp@192.168.0.103:8080/video/h264
