@@ -9,6 +9,8 @@ import (
 	"testing"
 	"time"
 
+	"rtsp-proxy/pkg/proxy"
+
 	"github.com/stretchr/testify/require"
 )
 
@@ -137,9 +139,11 @@ func TestProtocols(t *testing.T) {
 				"    protocol: "+pair[0]+"\n"),
 				0644)
 
-			p, err := newProgram([]string{})
+			config, _ := proxy.ParseConf("conf.yml")
+			p, err := proxy.NewProgram(config)
+			p.Run()
 			require.NoError(t, err)
-			defer p.close()
+			defer p.Stop()
 
 			time.Sleep(1 * time.Second)
 
@@ -199,9 +203,10 @@ func TestStreamAuth(t *testing.T) {
 		"    protocol: udp\n"),
 		0644)
 
-	p, err := newProgram([]string{})
+	config, _ := proxy.ParseConf("conf.yml")
+	p, err := proxy.NewProgram(config)
 	require.NoError(t, err)
-	defer p.close()
+	defer p.Stop()
 
 	time.Sleep(1 * time.Second)
 
@@ -258,9 +263,10 @@ func TestServerAuth(t *testing.T) {
 		"    protocol: udp\n"),
 		0644)
 
-	p, err := newProgram([]string{})
+	config, _ := proxy.ParseConf("conf.yml")
+	p, err := proxy.NewProgram(config)
 	require.NoError(t, err)
-	defer p.close()
+	defer p.Stop()
 
 	time.Sleep(1 * time.Second)
 
