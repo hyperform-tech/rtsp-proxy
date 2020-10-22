@@ -1,4 +1,4 @@
-module github.com/hyperform-tech/rtsp-proxyrtsp-proxy
+module github.com/hyperform-tech/rtsp-proxy
 
 go 1.13
 
