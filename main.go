@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-	"rtsp-proxy/pkg/proxy"
+
+	"github.com/hyperform-tech/rtsp-proxy/pkg/proxy"
 
 	"gopkg.in/alecthomas/kingpin.v2"
 )
