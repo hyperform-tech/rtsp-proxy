@@ -1,4 +1,4 @@
-module rtsp-simple-proxy
+module rtsp-proxy
 
 go 1.13
 
