@@ -45,5 +45,9 @@ func main() {
 	}
 
 	program, err := proxy.NewProgram(config)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	program.Run()
 }
